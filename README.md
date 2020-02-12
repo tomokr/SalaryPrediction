@@ -20,3 +20,10 @@ Also, I checked the relationships between salary and job type, degree, major and
 These graphs are the mean salary vs. job type, degree, major and company id.
 ![jobtype_vs_mean_salary](https://user-images.githubusercontent.com/5339011/74353146-7fe72580-4d87-11ea-8b1c-99a8bdf0a507.png)
 
+![degree_vs_mean_salary](https://user-images.githubusercontent.com/5339011/74353823-77431f00-4d88-11ea-874c-ade3d54f55a7.png)
+
+![major_vs_mean_salary](https://user-images.githubusercontent.com/5339011/74353830-79a57900-4d88-11ea-9617-85591ea82839.png)
+
+![compid_vs_mean_salary](https://user-images.githubusercontent.com/5339011/74353833-7b6f3c80-4d88-11ea-9e45-6112376274d8.png)
+
+Accoding to the means of categorical features, jobType and degrees are correlated with salary stronger than major and companyId.
