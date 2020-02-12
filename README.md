@@ -12,6 +12,10 @@ Some of the job has 0 salary and I removed the ones.
 
 ## Exploring the data
 
+The distribution of salary looks like the graph below.
+![salary](https://user-images.githubusercontent.com/5339011/74356121-d5253600-4d8b-11ea-980b-4c6a0c7e2cd5.png)
+We can see a long tail on the right side.
+
 There are two numerical variable; years of experience, miles from metropolis.
 
 <img src="https://user-images.githubusercontent.com/5339011/74351853-b15ef180-4d85-11ea-9384-358a703f4d82.png" width="480">
