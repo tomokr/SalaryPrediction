@@ -74,7 +74,7 @@ The table shows the results.
 | Regression Method | MSE |
 | ------------- | ------------- |
 | Linear Regression  | 384.4  |
-| Random Forest  | 134.95  |
+| Random Forest  | 135.0  |
 | SGD Regressor  | 1.681e22  |
 | Gradient Boosting  | 736.8  |
 
