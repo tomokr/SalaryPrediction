@@ -30,3 +30,46 @@ These graphs are the mean salary vs. job type, degree, major and company id.
 ![compid_vs_mean_salary](https://user-images.githubusercontent.com/5339011/74353833-7b6f3c80-4d88-11ea-9e45-6112376274d8.png)
 
 Accoding to the means of categorical features, jobType and degrees are correlated with salary stronger than major and companyId.
+
+## Establish a baseline
+For the baseline, I decided to predict the salary only by the years of experience.
+I used the ```LinearRegresson ``` to make a model
+The MSE for this model is 1288.
+
+## Hypothesize solution
+
+### Model 1: Adding degree and jobtype as variables
+I think the degree and jobtype are also the key to predict the salary. It's because the means of salary and degree depend on what they are.
+
+I applied one-hot encoding to "jobType" and "degree". Then I predict the relationship between salary with variables, which are years of experience, degree and jobtype.
+
+### Model 2: Model1 + salary scaling
+At first, scale saraly, then use model 1. This is because the distribution of salary is skewed.
+
+### Model 3: All the features without companyID
+All the features without companyID are considered as linearly correlated with salary.
+
+## Develop
+For all the model, I used ```LinearRegression``` for modeling.
+
+The MSEs are listed below.
+| Model # | MSE |
+| ------------- | ------------- |
+| 1  | 659.8  |
+| 2  | 659.8  |
+| 3  | 384.4  |
+
+Now the model 3 is the best for MSE.
+
+## Turning model 3
+With using the features I used at model3, I tried some other regression.
+The table shows the results.
+
+| Regression Method | MSE |
+| ------------- | ------------- |
+| Linear Regression  | 384.4  |
+| Random Forest  | 134.95  |
+| SGD Regressor  | 1.681e22  |
+| Gradient Boosting  | 736.8  |
+
+
