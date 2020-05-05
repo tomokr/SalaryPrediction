@@ -59,7 +59,7 @@ Std means the standard deviation of MSE.
 
 Now Gradient boosting is the best.
 
-## Turning Gradienst boosting model
+## Turning Gradient boosting model
 I tried tuning the number of estimators.
 
 | # of estimators | MSE | Std |
