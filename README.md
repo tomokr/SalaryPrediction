@@ -44,38 +44,28 @@ The MSE for this model is 1288.
 
 ## Hypothesize solution
 
-### Model 1: Adding degree and jobtype as variables
-I think the degree and jobtype are also the key to predict the salary. It's because the means of salary and degree depend on what they are.
+I used all the features without companyId.
+And use the methods: Linear Regression, Gradient boosting and Random forest regressor.
 
-I applied one-hot encoding to "jobType" and "degree". Then I predict the relationship between salary with variables, which are years of experience, degree and jobtype.
-
-### Model 2: Model1 + salary scaling
-At first, scale saraly, then use model 1. This is because the distribution of salary is skewed.
-
-### Model 3: All the features without companyID
-All the features without companyID are considered as linearly correlated with salary.
 
 ## Develop
-For all the model, I used ```LinearRegression``` for modeling.
+For all the model, the first trial MSEs are listed below.
+Std means the standard deviation of MSE.
+| Model  | MSE | Std  |
+| ------------- | ------------- | ------------- |
+| Linear regression  | 384  | 1.78 |
+| Gradient boosting  | 375  | 1.82 |
+| Random forest  | 466  | 1.50 |
 
-The MSEs are listed below.
-| Model # | MSE |
-| ------------- | ------------- |
-| 1  | 659.8  |
-| 2  | 659.8  |
-| 3  | 384.4  |
+Now Gradient boosting is the best.
 
-Now the model 3 is the best for MSE.
+## Turning Gradienst boosting model
+I tried tuning the number of estimators.
 
-## Turning model 3
-With using the features I used at model3, I tried some other regression.
-The table shows the results.
+| # of estimators | MSE | Std |
+| ------------- | ------------- | ------------- |
+| 100 (default)  | 375  | 1.82 |
+| 200  | 359  | 1.44 |
+| 1000  | 355  | 1.45 |
 
-| Regression Method | MSE |
-| ------------- | ------------- |
-| Linear Regression  | 384.4  |
-| Random Forest  | 135.0  |
-| SGD Regressor  | 1.681e22  |
-| Gradient Boosting  | 736.8  |
-
-
+When the number of estimators is 200 or 1000, the MSE is lower than 360.
