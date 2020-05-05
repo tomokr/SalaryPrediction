@@ -44,9 +44,8 @@ The MSE for this model is 1288.
 
 ## Hypothesize solution
 
-I used all the features without companyId.
-And use the methods: Linear Regression, Gradient boosting and Random forest regressor.
-
+I used all the features without companyId and encoded the categorical value.
+Then I use these methods: Linear Regression, Gradient boosting and Random forest regressor.
 
 ## Develop
 For all the model, the first trial MSEs are listed below.
