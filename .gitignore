@@ -1,0 +1,4 @@
+*.docx
+.ipynb_checkpoints/
+Salary_Prediction_2.ipynb
+.DS_Store
