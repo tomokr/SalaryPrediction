@@ -67,7 +67,7 @@ I tried tuning the number of estimators.
 | 200  | 359  | 1.44 |
 | 1000  | 355  | 1.45 |
 
-When the number of estimators is 200 or 1000, the MSE is lower than 360.¥## Turning Gradient boosting model
+When the number of estimators is 200 or 1000, the MSE is lower than 360.
 
 ## feature importance
 Using the gradient boosting model with n_estimators=200, I checked the features importance.
