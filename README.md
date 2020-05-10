@@ -6,6 +6,11 @@ The original data contains the features: job id, company id, job type, degree, m
 With using these features, I made a model for predicting the salary.  
 If we obtain a new job description, we can predict the salary for this new job with using this model.
 
+## About the dataset
+
+This data set looks like this.
+
+
 ## Data cleaning
 
 The original data didn't contain NaN or strange value.
