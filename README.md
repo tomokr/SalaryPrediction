@@ -2,8 +2,22 @@
 
 This is the salary prediction from job description.
 
-The original data contains the features: job id, company id, job type, degree, major, industry, years of experience, miles from metropolis.
-With using these features, I made a model for predicting the salary.
+The original data contains the features: job id, company id, job type, degree, major, industry, years of experience, miles from metropolis.  
+With using these features, I made a model for predicting the salary.  
+If we obtain a new job description, we can predict the salary for this new job with using this model.
+
+## About the dataset
+
+This feature dataset looks like this.  
+![dataset](https://user-images.githubusercontent.com/5339011/81498700-63647600-9301-11ea-8f5b-705ba2336d2f.png)
+From this image, we can see some numerical variables and categorical variables.
+We have the numerical features: companyId, yearsExperience,	milesFromMetropolis,
+and categorical features: jobId, jobType, degree, major,	industry.
+
+Also, we have a salary dataset. This contains the target value.  
+<img src="https://user-images.githubusercontent.com/5339011/81498814-f6051500-9301-11ea-8c69-bae1ee6900c4.png" width="240">  
+We found the jobId is the common index for both.
+
 
 ## Data cleaning
 
@@ -44,38 +58,33 @@ The MSE for this model is 1288.
 
 ## Hypothesize solution
 
-### Model 1: Adding degree and jobtype as variables
-I think the degree and jobtype are also the key to predict the salary. It's because the means of salary and degree depend on what they are.
-
-I applied one-hot encoding to "jobType" and "degree". Then I predict the relationship between salary with variables, which are years of experience, degree and jobtype.
-
-### Model 2: Model1 + salary scaling
-At first, scale saraly, then use model 1. This is because the distribution of salary is skewed.
-
-### Model 3: All the features without companyID
-All the features without companyID are considered as linearly correlated with salary.
+I used all the features without companyId and encoded the categorical value.
+Then I use these methods: Linear Regression, Gradient boosting and Random forest regressor.
 
 ## Develop
-For all the model, I used ```LinearRegression``` for modeling.
+For all the model, the first trial MSEs are listed below.
+Std means the standard deviation of MSE.
+| Model  | MSE | Std  |
+| ------------- | ------------- | ------------- |
+| Linear regression  | 384  | 1.78 |
+| Gradient boosting  | 375  | 1.82 |
+| Random forest  | 466  | 1.50 |
 
-The MSEs are listed below.
-| Model # | MSE |
-| ------------- | ------------- |
-| 1  | 659.8  |
-| 2  | 659.8  |
-| 3  | 384.4  |
+Now Gradient boosting is the best.
 
-Now the model 3 is the best for MSE.
+## Turning Gradient boosting model
+I tried tuning the number of estimators.
 
-## Turning model 3
-With using the features I used at model3, I tried some other regression.
-The table shows the results.
+| # of estimators | MSE | Std |
+| ------------- | ------------- | ------------- |
+| 100 (default)  | 375  | 1.82 |
+| 200  | 359  | 1.44 |
+| 1000  | 355  | 1.45 |
 
-| Regression Method | MSE |
-| ------------- | ------------- |
-| Linear Regression  | 384.4  |
-| Random Forest  | 135.0  |
-| SGD Regressor  | 1.681e22  |
-| Gradient Boosting  | 736.8  |
+When the number of estimators is 200 or 1000, the MSE is lower than 360.
 
+## feature importance
+Using the gradient boosting model with n_estimators=200, I checked the features importance.
+Ignoring the categorical value, years of experience and miles from metropolis are the important features.
 
+![feature_importance](https://user-images.githubusercontent.com/5339011/81083418-8670dd80-8f2f-11ea-81a2-d0aa5089f15f.png)
