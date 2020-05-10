@@ -2,8 +2,9 @@
 
 This is the salary prediction from job description.
 
-The original data contains the features: job id, company id, job type, degree, major, industry, years of experience, miles from metropolis.
-With using these features, I made a model for predicting the salary.
+The original data contains the features: job id, company id, job type, degree, major, industry, years of experience, miles from metropolis.  
+With using these features, I made a model for predicting the salary.  
+If we obtain a new job description, we can predict the salary for this new job with using this model.
 
 ## Data cleaning
 
