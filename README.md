@@ -15,8 +15,7 @@ We have the numerical features: companyId, yearsExperience,	milesFromMetropolis,
 and categorical features: jobId, jobType, degree, major,	industry.
 
 Also, we have a salary dataset. This contains the target value.
-![target](https://user-images.githubusercontent.com/5339011/81498814-f6051500-9301-11ea-8c69-bae1ee6900c4.png)
-
+<img src="https://user-images.githubusercontent.com/5339011/81498814-f6051500-9301-11ea-8c69-bae1ee6900c4.png" width="480">
 We found the jobId is the common index for both.
 
 
