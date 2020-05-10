@@ -8,11 +8,17 @@ If we obtain a new job description, we can predict the salary for this new job w
 
 ## About the dataset
 
-This data set looks like this.
+This feature dataset looks like this.
 ![dataset](https://user-images.githubusercontent.com/5339011/81498700-63647600-9301-11ea-8f5b-705ba2336d2f.png)
 From this image, we can see some numerical variables and categorical variables.
 We have the numerical features: companyId, yearsExperience,	milesFromMetropolis,
 and categorical features: jobId, jobType, degree, major,	industry.
+
+Also, we have a salary dataset. This contains the target value.
+![target](https://user-images.githubusercontent.com/5339011/81498814-f6051500-9301-11ea-8c69-bae1ee6900c4.png)
+
+We found the jobId is the common index for both.
+
 
 ## Data cleaning
 
